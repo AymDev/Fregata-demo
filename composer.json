@@ -1,0 +1,21 @@
+{
+    "name": "aymdev/fregata-demo",
+    "description": "Demo project for Fregata framework",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "AymDev",
+            "email": "aymericmayeux@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "aymdev/fregata": "^1.0.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
