@@ -1,4 +1,8 @@
 fregata:
     migrations:
         demo_migration:
+            tasks:
+                before:
+                    - App\DemoMigration\Task\RecreateSourceSchemaBeforeTask
+                    - App\DemoMigration\Task\RecreateTargetSchemaBeforeTask
             migrators_directory: '%fregata.root_dir%/src/DemoMigration'
