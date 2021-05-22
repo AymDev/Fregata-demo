@@ -4,3 +4,29 @@ services:
 
     App\:
         resource: '../src/'
+
+    # Source MySQL connection
+    Doctrine\DBAL\Connection $source: '@doctrine.connection.source'
+    doctrine.connection.source:
+        class: Doctrine\DBAL\Connection
+        factory: ['Doctrine\DBAL\DriverManager', 'getConnection']
+        arguments:
+            -
+                driver: pdo_mysql
+                host: mysql
+                user: root
+                password: root
+                dbname: fregata_source
+
+    # Target PostgreSQL connection
+    Doctrine\DBAL\Connection $target: '@doctrine.connection.target'
+    doctrine.connection.target:
+        class: Doctrine\DBAL\Connection
+        factory: ['Doctrine\DBAL\DriverManager', 'getConnection']
+        arguments:
+            -
+                driver: pdo_pgsql
+                host: pgsql
+                user: root
+                password: root
+                dbname: fregata_target
