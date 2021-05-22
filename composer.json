@@ -12,7 +12,8 @@
     "minimum-stability": "stable",
     "require": {
         "aymdev/fregata": "^1.0.2",
-        "doctrine/dbal": "^2.10"
+        "doctrine/dbal": "^2.10",
+        "fakerphp/faker": "^1.14"
     },
     "autoload": {
         "psr-4": {

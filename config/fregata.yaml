@@ -5,4 +5,5 @@ fregata:
                 before:
                     - App\DemoMigration\Task\RecreateSourceSchemaBeforeTask
                     - App\DemoMigration\Task\RecreateTargetSchemaBeforeTask
+                    - App\DemoMigration\Task\GenerateSourceDataBeforeTask
             migrators_directory: '%fregata.root_dir%/src/DemoMigration'

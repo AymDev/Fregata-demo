@@ -30,3 +30,7 @@ services:
                 user: root
                 password: root
                 dbname: fregata_target
+
+    # Faker instance for data generation
+    Faker\Generator:
+        factory: ['Faker\Factory', 'create']
