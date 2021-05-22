@@ -1,0 +1,4 @@
+fregata:
+    migrations:
+        demo_migration:
+            migrators_directory: '%fregata.root_dir%/src/DemoMigration'
