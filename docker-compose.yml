@@ -1,0 +1,38 @@
+version: "3.7"
+
+networks:
+    app_net:
+
+services:
+    mysql:
+        image: "mysql:5.7"
+        networks:
+            - app_net
+        ports:
+            - 3306:3306
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: fregata_source
+
+    pgsql:
+        image: "postgres:13.3-alpine"
+        networks:
+            - app_net
+        ports:
+            - 5432:5432
+        environment:
+            POSTGRES_USER: root
+            POSTGRES_PASSWORD: root
+            POSTGRES_DB: fregata_target
+
+    app:
+        build:
+            context: .
+        container_name: fregata_app
+        networks:
+            - app_net
+        restart: on-failure
+        tty: true
+        stdin_open: true
+        volumes:
+            - ./:/var/www/html
