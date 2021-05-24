@@ -72,7 +72,7 @@ class RecreateSourceSchemaBeforeTask implements TaskInterface
                 id INT(4) NOT NULL AUTO_INCREMENT,
                 name VARCHAR(50) NOT NULL,
                 PRIMARY KEY (id)
-            ) ENGINE=INNODB;
+            ) ENGINE=INNODB AUTO_INCREMENT=100;
 
             -- Blog: post table
             DROP TABLE IF EXISTS blog_post;

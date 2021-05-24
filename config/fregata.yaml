@@ -6,4 +6,7 @@ fregata:
                     - App\DemoMigration\Task\RecreateSourceSchemaBeforeTask
                     - App\DemoMigration\Task\RecreateTargetSchemaBeforeTask
                     - App\DemoMigration\Task\GenerateSourceDataBeforeTask
+                    - Fregata\Adapter\Doctrine\DBAL\ForeignKey\Task\ForeignKeyBeforeTask
+                after:
+                    - Fregata\Adapter\Doctrine\DBAL\ForeignKey\Task\ForeignKeyAfterTask
             migrators_directory: '%fregata.root_dir%/src/DemoMigration'
